@@ -24,11 +24,17 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
+// Implement:
+// https://www.npmjs.com/package/node-json-db
+//
 app.get('/api/orders', cors(), (req, res) => {
   res.send(
     {
       orders: [
-        { name: "order1", value: "$100", complete?: "false" }
+        { name: "order1", value: "$100", complete?: "false" },
+        { name: "order2", value: "$100", complete?: "false" },
+        { name: "order3", value: "$100", complete?: "false" },
+        { name: "order4", value: "$100", complete?: "false" }
       ]
     }
   )
